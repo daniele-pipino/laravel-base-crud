@@ -16,7 +16,7 @@ class HomeController extends Controller
     public function index()
     {
         $comics = Comic::all();
-        return view('home');
+        return view('home', compact('comics'));
     }
 
     /**
