@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\models\Comic;
 
-class HomeController extends Controller
+class ComicController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class HomeController extends Controller
     public function index()
     {
         $comics = Comic::all();
-        return view('home', compact('comics'));
+        return view('comics.index', compact('comics'));
     }
 
     /**
