@@ -4,17 +4,16 @@
 
 @section('content')
 <div class="container">
-    <div class="row">
+    <div class="row g-2">
         @forelse ($comics as $index => $comic)
-            <div class="col-3">
+            <div class="col-4">
                 <div class="card">
-                        <img src="{{$comic->thumb}}" class="card-img-top img-fluid" alt="...">
+                        <img src="{{$comic->thumb}}" class="card-img-top  w-25" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">{{$comic->series}}</h5>
                             <p class="card-text">{{$comic->price}}</p>
                             <a href="{{route('comics.show', $comic->id)}}" class="btn btn-primary">Dettagli</a>
                         </div>
-                    
                 </div>
             </div>
          @empty
