@@ -121,6 +121,6 @@ class ComicController extends Controller
     {
         $comic = Comic::withTrashed()->find($id);
         $comic->restore();
-        return redirect()->route('comics.index')->with('type', 'succes')->with('msg', "Il fumetto $comic->title è stato reinserito");
+        return redirect()->route('comics.index')->with('type', 'success')->with('msg', "Il fumetto $comic->title è stato reinserito");
     }
 }
