@@ -17,4 +17,7 @@ Route::get('/',  function () {
     return view('home');
 })->name('home');
 
+// rotta per i comic trsahati
+Route::get('/comics/trash', 'ComicController@trash')->name('comics.trash');
+
 Route::resource('comics', 'ComicController');

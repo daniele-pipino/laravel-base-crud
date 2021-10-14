@@ -15,6 +15,9 @@
         <li class="nav-item">
           <a class="nav-link" href="{{route('comics.create')}}">New comics</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('comics.trash')}}">Trash</a>
+        </li>
       </ul>
     </div>
   </div>
