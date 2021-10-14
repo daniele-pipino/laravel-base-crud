@@ -32,5 +32,6 @@
             <h1 class="text-center my-5">No comics available</h1>
         @endforelse
     </div>
+    <a href="{{route('comics.trash')}}">Trash</a>
 </div>
 @endsection

@@ -19,7 +19,7 @@
                             <h5 class="card-title">{{$comic->series}}</h5>
                             <p class="card-text">{{$comic->price}}</p>
                             <a href="{{route('comics.show', $comic->id)}}" class="btn btn-primary">Dettagli</a>
-                            <form action="{{route('comics.restore',$comic->id)}}" method="POST" >
+                            <form action="{{route('comics.restore', $comic->id)}}" method="POST" >
                                 @csrf
                                 @method('PATCH')
                                 <button type="submit" class="btn btn-success">Ripristina</button>

@@ -20,4 +20,7 @@ Route::get('/',  function () {
 // rotta per i comic trsahati
 Route::get('/comics/trash', 'ComicController@trash')->name('comics.trash');
 
+// rotta per reinserirli nel databse
+Route::patch('/comics/{comic}/restore', 'ComicController@restore')->name('comics.restore');
+
 Route::resource('comics', 'ComicController');
