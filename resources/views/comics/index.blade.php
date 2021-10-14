@@ -1,7 +1,13 @@
 @extends('layouts.main')
 
 @section('title','Home')
-
+{{-- alert in caso di eliminazione comci --}}
+@if (session('type'))
+    <div class="alert alert-{{session('type')}}" role="alert">
+        {{session('msg')}}
+    </div>
+@endif
+{{--  --}}
 @section('content')
 <div class="container">
     <div class="row g-2">
