@@ -42,7 +42,7 @@ class ComicController extends Controller
         // validation dati prima di mandarli al form
         $request->validate([
             'title' => 'required|string|unique:comics|min:2',
-            'series' => 'required|string|unique:comics|min:2',
+            'series' => 'required|string|min:2',
             'price' => 'required|numeric|min:3',
             'tyoe' => 'required|string|min:2|max:15',
         ]);

@@ -7,7 +7,17 @@
 <div class="container">
     <div class="row">
         <div class="col-9 mx-auto border-secondary rounded-pill mt-5">
-
+{{-- form error --}}
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{$error}}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+{{-- selezione form --}}
             @if ($comic->exist)
                 <form method="POST" action="{{route('comics.update',$comic->id)}}" class="col-12">
                     @csrf
@@ -15,7 +25,8 @@
             @else
                 <form method="POST" action="{{route('comics.store')}}" class="col-12">
                     @csrf
-            @endif        
+            @endif   
+{{-- fine selezione --}}
                 <div class="mb-3 col-6">
                     <label for="title" class="form-label">Title</label>
                     <input type="text" class="form-control" id="title" name="title" value="{{$comic->title}}" placeholder="Comic title">
