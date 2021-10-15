@@ -9,7 +9,7 @@
 @endif
 {{--  --}}
 @section('content')
-<div class="container">
+<div class="container mt-5">
     <div class="row g-2">
         @forelse ($comics as $index => $comic)
             <div class="col-4">
