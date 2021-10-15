@@ -9,6 +9,7 @@
     <div class="card-body">
       <h4 class="card-text text-primary">{{$comic->title}}</h4>
       <p class="card-text">{{$comic->description}}</p>
+      <p class="card-text">Price: {{$comic->price}}</p>
     </div>
   </div>
 </div>
