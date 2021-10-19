@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-use App\models\Comic;
 use Illuminate\Validation\Rule;
+use App\models\Comic;
 
 class ComicController extends Controller
 {
@@ -45,7 +44,7 @@ class ComicController extends Controller
             'title' => 'required|string|unique:comics|min:2',
             'series' => 'required|string|min:2',
             'price' => 'required|numeric|min:3',
-            'tyoe' => 'required|string|min:2|max:15',
+            'type' => 'required|string|min:2|max:15',
         ]);
 
         // recuperiamo i dati dal form
@@ -88,7 +87,7 @@ class ComicController extends Controller
      */
     public function edit($id)
     {
-        $comic = Comic::findorFail($id);
+        $comic = Comic::findorFail($id); // o dependency ingection
         return view('comics.edit', compact('comic'));
     }
 
@@ -101,12 +100,14 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+
         // validazione dati
+
         $request->validate([
-            'title' => ['required', 'string', Rule::unique('comics')->ignore($comic->id), 'min:2'],
-            'series' => 'required|string|unique:comics|min:2',
+            'series' => 'required|string|min:2',
             'price' => 'required|numeric|min:3',
-            'tyoe' => 'required|string|min:2|max:15',
+            'type' => 'required|string|min:2|max:15',
+            'title' => ['required', 'string', Rule::unique('comics')->ignore($comic->id), 'min:2', 'max:100'],
         ]);
 
         $data = $request->all();
